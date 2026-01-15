@@ -473,7 +473,7 @@
           <div class="sectionTitle" data-i18n="sectionBasic">기본 정보</div>
           <div class="row">
             <div>
-              <label>출근일수</label>
+              <label data-i18n="labelDays">출근일수</label>
               <select id="daysPreset">
                 <option value="22">주 5일 (월 22일)</option>
                 <option value="18">주 4일 (월 18일)</option>
@@ -482,7 +482,7 @@
               </select>
             </div>
             <div>
-              <label>왕복 기준</label>
+              <label data-i18n="labelRoundTrip">왕복 기준</label>
               <select id="roundTrip">
                 <option value="2">왕복</option>
                 <option value="1">편도</option>
@@ -492,62 +492,66 @@
 
           <div class="toggle-content" id="daysCustomToggle">
             <div>
-              <label>월 출근일수 직접 입력</label>
+              <label data-i18n="daysCustom">월 출근일수 직접 입력</label>
               <input
                 id="daysCustom"
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 20"
               />
             </div>
           </div>
-          <button class="toggle-btn" id="daysCustomBtn" style="display: none">
+          <button class="toggle-btn" id="daysCustomBtn" style="display: none" data-i18n="daysCustomBtn">
             <span>📝</span> 직접 입력하기
           </button>
 
           <div class="sectionTitle" style="margin-top: 20px" data-i18n="sectionTime">출퇴근 시간</div>
           <div class="row">
             <div>
-              <label>편도 소요 시간 (분)</label>
+              <label data-i18n="labelCommuteTime">편도 소요 시간 (분)</label>
               <input
                 id="commuteTime"
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 45"
               />
-              <div class="help">집에서 회사까지 걸리는 시간</div>
+              <div class="help" data-i18n="hintCommuteTime">집에서 회사까지 걸리는 시간</div>
             </div>
             <div>
-              <label>시간당 기회비용 (원)</label>
+              <label data-i18n="labelHourlyValue">시간당 기회비용 (원)</label>
               <input
                 id="hourlyValue"
                 type="number"
                 min="0"
                 step="1000"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 25000"
               />
-              <div class="help">시간당 급여 또는 가치로 계산</div>
+              <div class="help" data-i18n="hintHourlyValue">시간당 급여 또는 가치로 계산</div>
             </div>
           </div>
 
           <!-- 대중교통 -->
           <div id="panel-pt" style="margin-top: 20px">
-            <div class="sectionTitle">대중교통 정보</div>
+            <div class="sectionTitle" data-i18n="sectionPT">대중교통 정보</div>
             <div class="row">
               <div>
-                <label>편도 교통비 (원)</label>
+                <label data-i18n="labelPTOneWay">편도 교통비 (원)</label>
                 <input
                   id="ptOneWay"
                   type="number"
                   min="0"
                   step="10"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 1400"
                 />
               </div>
               <div>
-                <label>정기권 사용</label>
+                <label data-i18n="labelPTPass">정기권 사용</label>
                 <select id="ptPass">
                   <option value="no">미사용</option>
                   <option value="yes">사용</option>
@@ -558,57 +562,61 @@
             <div class="toggle-content" id="ptPassToggle">
               <div class="row">
                 <div>
-                  <label>정기권 월 금액 (원)</label>
+                  <label data-i18n="labelPTPassMonthly">정기권 월 금액 (원)</label>
                   <input
                     id="ptPassMonthly"
                     type="number"
                     min="0"
                     step="100"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 65000"
                   />
-                  <div class="help">
+                  <div class="help" data-i18n="hintPTPass">
                     정기권을 쓰면 월 금액이 우선 적용됩니다
                   </div>
                 </div>
                 <div>
-                  <label>추가 비용 (월)</label>
+                  <label data-i18n="labelPTExtra">추가 비용 (월)</label>
                   <input
                     id="ptExtraMonthly"
                     type="number"
                     min="0"
                     step="100"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 0"
                   />
-                  <div class="help">버스 추가요금, 셔틀 유료 등</div>
+                  <div class="help" data-i18n="hintPTExtra">버스 추가요금, 셔틀 유료 등</div>
                 </div>
               </div>
             </div>
-            <button class="toggle-btn" id="ptPassBtn" style="display: none">
+            <button class="toggle-btn" id="ptPassBtn" style="display: none" data-i18n="ptPassBtn">
               <span>💳</span> 정기권 정보 입력하기
             </button>
           </div>
 
           <!-- 자차 -->
           <div id="panel-car" class="hidden" style="margin-top: 20px">
-            <div class="sectionTitle">자차 정보</div>
+            <div class="sectionTitle" data-i18n="sectionCar">자차 정보</div>
             <div class="row">
               <div>
-                <label>편도 거리 (km)</label>
+                <label data-i18n="labelCarOneWayKm">편도 거리 (km)</label>
                 <input
                   id="carOneWayKm"
                   type="number"
                   min="0"
                   step="0.1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 12.5"
                 />
               </div>
               <div>
-                <label>연비 (km/L)</label>
+                <label data-i18n="labelCarKmpl">연비 (km/L)</label>
                 <input
                   id="carKmpl"
                   type="number"
                   min="0"
                   step="0.1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 11.0"
                 />
               </div>
@@ -616,22 +624,24 @@
 
             <div class="row" style="margin-top: 12px">
               <div>
-                <label>유가 (원/L)</label>
+                <label data-i18n="labelCarFuelPrice">유가 (원/L)</label>
                 <input
                   id="carFuelPrice"
                   type="number"
                   min="0"
                   step="1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 1700"
                 />
               </div>
               <div>
-                <label>톨게이트 (하루, 원)</label>
+                <label data-i18n="labelCarTollDaily">톨게이트 (하루, 원)</label>
                 <input
                   id="carTollDaily"
                   type="number"
                   min="0"
                   step="10"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 2000"
                 />
               </div>
@@ -640,53 +650,57 @@
             <div class="toggle-content" id="carExtraToggle">
               <div class="row" style="margin-top: 12px">
                 <div>
-                  <label>주차비 (월, 원)</label>
+                  <label data-i18n="labelCarParking">주차비 (월, 원)</label>
                   <input
                     id="carParkingMonthly"
                     type="number"
                     min="0"
                     step="1000"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 80000"
                   />
                 </div>
                 <div>
-                  <label>기타 비용 (월, 원)</label>
+                  <label data-i18n="labelCarExtra">기타 비용 (월, 원)</label>
                   <input
                     id="carExtraMonthly"
                     type="number"
                     min="0"
                     step="100"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 0"
                   />
                 </div>
               </div>
             </div>
-            <button class="toggle-btn" id="carExtraBtn">
+            <button class="toggle-btn" id="carExtraBtn" data-i18n="carExtraBtn">
               <span>➕</span> 추가 비용 입력하기
             </button>
           </div>
 
           <!-- 혼합 -->
           <div id="panel-mix" class="hidden" style="margin-top: 20px">
-            <div class="sectionTitle">혼합 정보 (대중교통 + 자차)</div>
+            <div class="sectionTitle" data-i18n="sectionMix">혼합 정보 (대중교통 + 자차)</div>
             <div class="row">
               <div>
-                <label>대중교통 편도 (원)</label>
+                <label data-i18n="labelMixPTOneWay">대중교통 편도 (원)</label>
                 <input
                   id="mixPtOneWay"
                   type="number"
                   min="0"
                   step="10"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 1400"
                 />
               </div>
               <div>
-                <label>대중교통 추가 (월)</label>
+                <label data-i18n="labelMixPTExtra">대중교통 추가 (월)</label>
                 <input
                   id="mixPtExtraMonthly"
                   type="number"
                   min="0"
                   step="100"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 0"
                 />
               </div>
@@ -694,22 +708,24 @@
 
             <div class="row" style="margin-top: 12px">
               <div>
-                <label>자차 편도 거리 (km)</label>
+                <label data-i18n="labelMixCarOneWayKm">자차 편도 거리 (km)</label>
                 <input
                   id="mixCarOneWayKm"
                   type="number"
                   min="0"
                   step="0.1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 6.0"
                 />
               </div>
               <div>
-                <label>자차 연비 (km/L)</label>
+                <label data-i18n="labelMixCarKmpl">자차 연비 (km/L)</label>
                 <input
                   id="mixCarKmpl"
                   type="number"
                   min="0"
                   step="0.1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 11.0"
                 />
               </div>
@@ -717,22 +733,24 @@
 
             <div class="row" style="margin-top: 12px">
               <div>
-                <label>유가 (원/L)</label>
+                <label data-i18n="labelMixCarFuelPrice">유가 (원/L)</label>
                 <input
                   id="mixCarFuelPrice"
                   type="number"
                   min="0"
                   step="1"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 1700"
                 />
               </div>
               <div>
-                <label>톨비 (하루, 원)</label>
+                <label data-i18n="labelMixCarToll">톨비 (하루, 원)</label>
                 <input
                   id="mixCarTollDaily"
                   type="number"
                   min="0"
                   step="10"
+                  data-i18n-placeholder="placeholderExample"
                   placeholder="예: 0"
                 />
               </div>
@@ -741,28 +759,30 @@
             <div class="toggle-content" id="mixExtraToggle">
               <div class="row" style="margin-top: 12px">
                 <div>
-                  <label>주차비 (월, 원)</label>
+                  <label data-i18n="labelMixCarParking">주차비 (월, 원)</label>
                   <input
                     id="mixCarParkingMonthly"
                     type="number"
                     min="0"
                     step="1000"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 0"
                   />
                 </div>
                 <div>
-                  <label>기타 (월, 원)</label>
+                  <label data-i18n="labelMixExtra">기타 (월, 원)</label>
                   <input
                     id="mixExtraMonthly"
                     type="number"
                     min="0"
                     step="100"
+                    data-i18n-placeholder="placeholderExample"
                     placeholder="예: 0"
                   />
                 </div>
               </div>
             </div>
-            <button class="toggle-btn" id="mixExtraBtn">
+            <button class="toggle-btn" id="mixExtraBtn" data-i18n="mixExtraBtn">
               <span>➕</span> 추가 비용 입력하기
             </button>
           </div>
@@ -774,7 +794,7 @@
 
         <!-- 결과 카드 -->
         <div class="card">
-          <div class="sectionTitle">💰 비용 계산 결과</div>
+          <div class="sectionTitle" data-i18n="sectionCost">💰 비용 계산 결과</div>
           <div class="resultBox">
             <div class="kpis">
               <div class="kpi">
@@ -934,6 +954,7 @@
           hintPTExtra: "버스 추가요금, 셔틀 유료 등",
           hintCommuteTime: "집에서 회사까지 걸리는 시간",
           hintHourlyValue: "시간당 급여 또는 가치로 계산",
+          placeholderExample: "예: {value}",
           noteSummary: "• 입력값이 부족하면 일부 항목은 0으로 처리됩니다.<br />• 계산은 \"추정치\"이며 실제 비용은 달라질 수 있습니다."
         },
         en: {
@@ -1007,6 +1028,7 @@
           hintPTExtra: "Additional bus fare, paid shuttle, etc.",
           hintCommuteTime: "Time from home to office",
           hintHourlyValue: "Calculate based on hourly wage or value",
+          placeholderExample: "e.g.: {value}",
           noteSummary: "• Some items will be 0 if input is insufficient.<br />• Calculations are \"estimates\" and actual costs may vary."
         }
       };
@@ -1038,6 +1060,51 @@
         document.querySelectorAll("[data-i18n-content]").forEach((el) => {
           el.setAttribute("content", t(el.dataset.i18nContent));
         });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const key = el.dataset.i18nPlaceholder;
+          const placeholder = t(key);
+          // If placeholder contains {value}, try to extract original value
+          if (placeholder.includes("{value}")) {
+            const originalPlaceholder = el.getAttribute("data-placeholder-original") || el.placeholder || "";
+            const match = originalPlaceholder.match(/(\d+(?:\.\d+)?)/);
+            if (match) {
+              el.setAttribute("placeholder", placeholder.replace("{value}", match[1]));
+            } else {
+              el.setAttribute("placeholder", placeholder.replace("{value}", ""));
+            }
+          } else {
+            el.setAttribute("placeholder", placeholder);
+          }
+        });
+        document.querySelectorAll("[data-i18n-label]").forEach((el) => {
+          const label = el.closest("div")?.querySelector("label");
+          if (label) label.textContent = t(el.dataset.i18nLabel);
+        });
+        
+        // Update select options
+        const daysPreset = $("daysPreset");
+        if (daysPreset) {
+          Array.from(daysPreset.options).forEach((opt) => {
+            if (opt.value === "22") opt.textContent = t("optionDays5");
+            else if (opt.value === "18") opt.textContent = t("optionDays4");
+            else if (opt.value === "14") opt.textContent = t("optionDays3");
+            else if (opt.value === "custom") opt.textContent = t("optionCustom");
+          });
+        }
+        const roundTrip = $("roundTrip");
+        if (roundTrip) {
+          Array.from(roundTrip.options).forEach((opt) => {
+            if (opt.value === "2") opt.textContent = t("optionRoundTrip");
+            else if (opt.value === "1") opt.textContent = t("optionOneWay");
+          });
+        }
+        const ptPass = $("ptPass");
+        if (ptPass) {
+          Array.from(ptPass.options).forEach((opt) => {
+            if (opt.value === "no") opt.textContent = t("optionPTPassNo");
+            else if (opt.value === "yes") opt.textContent = t("optionPTPassYes");
+          });
+        }
       }
 
       function setLang(lang, options = {}) {
@@ -1257,49 +1324,88 @@
       });
 
       // ---------- Recommendations ----------
-      const recommendations = [
-        {
-          emoji: "📚",
-          title: "오디오북 듣기",
-          desc: "1년에 책 20~30권을 읽을 수 있어요!",
-        },
-        {
-          emoji: "🎧",
-          title: "팟캐스트 청취",
-          desc: "지식과 재미를 동시에 챙기세요",
-        },
-        {
-          emoji: "📱",
-          title: "온라인 강의 수강",
-          desc: "새로운 스킬을 배울 수 있는 시간",
-        },
-        { emoji: "💭", title: "명상하기", desc: "하루의 시작과 끝을 차분하게" },
-        { emoji: "✍️", title: "일기 쓰기", desc: "하루를 돌아보고 기록하세요" },
-        {
-          emoji: "🎵",
-          title: "음악 감상",
-          desc: "좋아하는 음악으로 기분 전환",
-        },
-        { emoji: "📖", title: "전자책 읽기", desc: "독서 습관을 만들어보세요" },
-        { emoji: "🧘", title: "스트레칭", desc: "몸과 마음을 풀어주는 시간" },
-        {
-          emoji: "💬",
-          title: "가족/친구와 통화",
-          desc: "소중한 사람들과 대화하기",
-        },
-        {
-          emoji: "🎯",
-          title: "목표 계획 세우기",
-          desc: "하루 계획을 세우고 정리",
-        },
-      ];
+      const recommendations = {
+        ko: [
+          {
+            emoji: "📚",
+            title: "오디오북 듣기",
+            desc: "1년에 책 20~30권을 읽을 수 있어요!",
+          },
+          {
+            emoji: "🎧",
+            title: "팟캐스트 청취",
+            desc: "지식과 재미를 동시에 챙기세요",
+          },
+          {
+            emoji: "📱",
+            title: "온라인 강의 수강",
+            desc: "새로운 스킬을 배울 수 있는 시간",
+          },
+          { emoji: "💭", title: "명상하기", desc: "하루의 시작과 끝을 차분하게" },
+          { emoji: "✍️", title: "일기 쓰기", desc: "하루를 돌아보고 기록하세요" },
+          {
+            emoji: "🎵",
+            title: "음악 감상",
+            desc: "좋아하는 음악으로 기분 전환",
+          },
+          { emoji: "📖", title: "전자책 읽기", desc: "독서 습관을 만들어보세요" },
+          { emoji: "🧘", title: "스트레칭", desc: "몸과 마음을 풀어주는 시간" },
+          {
+            emoji: "💬",
+            title: "가족/친구와 통화",
+            desc: "소중한 사람들과 대화하기",
+          },
+          {
+            emoji: "🎯",
+            title: "목표 계획 세우기",
+            desc: "하루 계획을 세우고 정리",
+          },
+        ],
+        en: [
+          {
+            emoji: "📚",
+            title: "Listen to Audiobooks",
+            desc: "You can read 20-30 books a year!",
+          },
+          {
+            emoji: "🎧",
+            title: "Listen to Podcasts",
+            desc: "Gain knowledge and entertainment at the same time",
+          },
+          {
+            emoji: "📱",
+            title: "Take Online Courses",
+            desc: "Time to learn new skills",
+          },
+          { emoji: "💭", title: "Meditate", desc: "Start and end your day calmly" },
+          { emoji: "✍️", title: "Write a Journal", desc: "Reflect on your day and record it" },
+          {
+            emoji: "🎵",
+            title: "Listen to Music",
+            desc: "Change your mood with your favorite music",
+          },
+          { emoji: "📖", title: "Read E-books", desc: "Build a reading habit" },
+          { emoji: "🧘", title: "Stretch", desc: "Time to relax your body and mind" },
+          {
+            emoji: "💬",
+            title: "Call Family/Friends",
+            desc: "Talk with your loved ones",
+          },
+          {
+            emoji: "🎯",
+            title: "Plan Your Goals",
+            desc: "Set and organize your daily plans",
+          },
+        ]
+      };
 
       function getRecommendations(yearlyMinutes) {
         if (!yearlyMinutes || yearlyMinutes < 60) return [];
 
         // 시간에 따라 추천 개수 조정
         const count = yearlyMinutes > 10000 ? 6 : yearlyMinutes > 5000 ? 4 : 3;
-        const shuffled = [...recommendations].sort(() => Math.random() - 0.5);
+        const recs = recommendations[currentLang] || recommendations.ko;
+        const shuffled = [...recs].sort(() => Math.random() - 0.5);
         return shuffled.slice(0, count);
       }
 
