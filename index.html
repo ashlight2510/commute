@@ -1545,15 +1545,19 @@
         $("timeValue").textContent = fmt(timeValue);
 
         // 힌트 텍스트
-        $("hintDaily").textContent =
-          days > 0
-            ? `월 ${days}일 기준 (왕복 ${rt === 2 ? "포함" : "미포함"})`
-            : "출근일수를 입력하세요.";
+        if (days > 0) {
+          const roundTripText = rt === 2 
+            ? (currentLang === "en" ? "round trip" : "왕복 포함")
+            : (currentLang === "en" ? "one-way" : "왕복 미포함");
+          $("hintDaily").textContent = t("hintDailyWithDays", { days, roundTrip: roundTripText });
+        } else {
+          $("hintDaily").textContent = t("hintDailyNoDays");
+        }
 
         $("hintMonthly").textContent =
           mode === "pt" && $("ptPass").value === "yes"
-            ? "정기권 월 금액 우선 적용"
-            : "입력값 기반 추정치";
+            ? t("hintPTPass")
+            : t("hintMonthly");
 
         // 추천 표시
         renderRecommendations(yearlyMinutes);
