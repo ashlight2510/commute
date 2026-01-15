@@ -799,8 +799,8 @@
             <div class="kpis">
               <div class="kpi">
                 <div>
-                  <div class="name">하루 출퇴근 비용</div>
-                  <div class="subVal" id="hintDaily">
+                  <div class="name" data-i18n="kpiDailyCost">하루 출퇴근 비용</div>
+                  <div class="subVal" id="hintDaily" data-i18n="hintDaily">
                     입력하면 자동 계산됩니다
                   </div>
                 </div>
@@ -808,15 +808,15 @@
               </div>
               <div class="kpi">
                 <div>
-                  <div class="name">월 출퇴근 비용</div>
-                  <div class="subVal" id="hintMonthly">출근일수 기준</div>
+                  <div class="name" data-i18n="kpiMonthlyCost">월 출퇴근 비용</div>
+                  <div class="subVal" id="hintMonthly" data-i18n="hintMonthly">출근일수 기준</div>
                 </div>
                 <div class="val" id="monthlyCost">—</div>
               </div>
               <div class="kpi highlight">
                 <div>
-                  <div class="name">연간 출퇴근 비용</div>
-                  <div class="subVal">월 비용 × 12</div>
+                  <div class="name" data-i18n="kpiYearlyCost">연간 출퇴근 비용</div>
+                  <div class="subVal" data-i18n="hintYearly">월 비용 × 12</div>
                 </div>
                 <div class="val highlight" id="yearlyCost">—</div>
               </div>
@@ -948,7 +948,9 @@
           kpiMonthlyCost: "월 출퇴근 비용",
           kpiYearlyCost: "연간 출퇴근 비용",
           hintDaily: "입력하면 자동 계산됩니다",
-          hintMonthly: "출근일수 기준",
+          hintDailyWithDays: "월 {days}일 기준 ({roundTrip})",
+          hintDailyNoDays: "출근일수를 입력하세요.",
+          hintMonthly: "입력값 기반 추정치",
           hintYearly: "월 비용 × 12",
           hintPTPass: "정기권을 쓰면 월 금액이 우선 적용됩니다",
           hintPTExtra: "버스 추가요금, 셔틀 유료 등",
@@ -1022,7 +1024,9 @@
           kpiMonthlyCost: "Monthly Commute Cost",
           kpiYearlyCost: "Yearly Commute Cost",
           hintDaily: "Will be calculated automatically",
-          hintMonthly: "Based on work days",
+          hintDailyWithDays: "{days} days/month ({roundTrip})",
+          hintDailyNoDays: "Please enter work days.",
+          hintMonthly: "Based on input values",
           hintYearly: "Monthly cost × 12",
           hintPTPass: "Monthly pass amount takes priority",
           hintPTExtra: "Additional bus fare, paid shuttle, etc.",
