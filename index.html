@@ -878,7 +878,7 @@
       </div>
     </div>
 
-    <div class="toast" id="toast">복사됨</div>
+    <div class="toast" id="toast" data-i18n="toastCopied">복사됨</div>
 
     <script>
       // ---------- i18n ----------
@@ -1144,7 +1144,8 @@
       const fmt = (n) => {
         if (!isFinite(n)) return "—";
         const x = Math.max(0, Math.round(n));
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
+        const currency = currentLang === "en" ? " KRW" : "원";
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + currency;
       };
       const fmtTime = (minutes) => {
         if (!isFinite(minutes) || minutes === 0) return "—";
@@ -1175,16 +1176,16 @@
         const n = Number(v);
         return isFinite(n) ? n : 0;
       };
-      const showToast = (msg = "복사됨") => {
-        const t = $("toast");
-        t.textContent = msg;
-        t.classList.add("show");
-        setTimeout(() => t.classList.remove("show"), 2000);
+      const showToast = (msg) => {
+        const toastEl = $("toast");
+        toastEl.textContent = msg || t("toastCopied");
+        toastEl.classList.add("show");
+        setTimeout(() => toastEl.classList.remove("show"), 2000);
       };
       const copyText = async (text) => {
         try {
           await navigator.clipboard.writeText(text);
-          showToast("복사됨");
+          showToast(t("toastCopied"));
         } catch (e) {
           const ta = document.createElement("textarea");
           ta.value = text;
@@ -1192,7 +1193,7 @@
           ta.select();
           document.execCommand("copy");
           ta.remove();
-          showToast("복사됨");
+          showToast(t("toastCopied"));
         }
       };
 
@@ -1575,12 +1576,12 @@
             : "";
         const sentence =
           currentLang === "en"
-            ? `(${modeLabel}) Commute cost is about ${fmt(daily).replace("원", " KRW")} per day / ` +
-              `about ${fmt(monthly).replace("원", " KRW")} per month / ` +
-              `about ${fmt(yearly).replace("원", " KRW")} per year.${timeText}`
-            : `(${modeLabel}) 출퇴근 비용은 하루 약 ${fmt(daily).replace("원", "원")} / ` +
-              `한 달 약 ${fmt(monthly).replace("원", "원")} / ` +
-              `1년 약 ${fmt(yearly).replace("원", "원")} 입니다.${timeText}`;
+            ? `(${modeLabel}) Commute cost is about ${fmt(daily)} per day / ` +
+              `about ${fmt(monthly)} per month / ` +
+              `about ${fmt(yearly)} per year.${timeText}`
+            : `(${modeLabel}) 출퇴근 비용은 하루 약 ${fmt(daily)} / ` +
+              `한 달 약 ${fmt(monthly)} / ` +
+              `1년 약 ${fmt(yearly)} 입니다.${timeText}`;
 
         $("summaryText").dataset.sentence = sentence;
         $("summaryText").dataset.number = Math.round(monthly);
